@@ -1,0 +1,165 @@
+@import "fonts"
+@import "vars"
+@import "normalize"
+@import "mixins"
+
+*
+  transition: $transition
+  box-sizing: border-box
+
+::-webkit-scrollbar
+  width: 8px
+
+::-webkit-scrollbar-thumb
+  border-radius: 300px
+  background: $white
+
+::-webkit-scrollbar-track
+  background: rgba(0, 0, 0, 0)
+
+::selection
+  background: $black
+
+body
+  font-family: 'neue-machina-regular'
+  opacity: 0
+  font-size: 1em
+  background: $black
+  color: $white
+  width: 100%
+  height: 100%
+  -webkit-font-smoothing: antialiased
+  text-size-adjust: 100%
+  text-rendering: optimizelegibility
+
+// h4
+//   font-family: 'neue-machina-medium'
+//   font-size: calc(0.4em + 2vw)
+//   line-height: 1.4em
+//   letter-spacing: 0.02em
+// h5
+//   font-family: 'neue-machina-medium'
+//   font-size: calc(0.4em + 2vw)
+//   line-height: 1.4em
+//   letter-spacing: 0.02em
+a
+  color: #1515cd
+
+.geolocation
+  position: fixed
+  background: $black
+  font-size: calc(0.4em + 2vw)
+  @include center
+  &__text
+    margin-bottom: 5%
+    max-width: 80%
+  &__button
+    display: flex
+    justify-content: center
+    align-items: center
+    cursor: pointer
+    width: calc(230px + 15vw)
+    height: calc(25px + 5vw)
+    border: 1px solid $white
+    border-radius: 7px
+
+.temperature
+  position: fixed
+  display: flex
+  align-items: center
+  top: 0
+  right: $default-padding / 4
+  z-index: 10
+  &__image
+    text-align: center
+    height: 30px
+    @media screen and ( $laptop )
+      height: 50px
+    img
+      width: 27px
+      @media screen and ( $laptop )
+        width: 50px
+  &__text
+    font-size: 12px
+    @media screen and ( $laptop )
+      font-size: 16px
+
+.container
+  padding: 3vw
+  padding-top: 0px
+  display: none
+  opacity: 0
+  filter: blur(20px)
+  @media screen and ( $mobile )
+
+  .hero
+    height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+    .title
+      font-family: 'neue-machina-black'
+      // font-size: calc(1.3em + 2vw)
+      font-size: calc(1.5em + 11vw)
+      // letter-spacing: 0.02em
+      padding-bottom: .3em
+      margin: 0
+
+  .subtitle
+    font-family: 'neue-machina-bold'
+    font-size: calc(.8em + 4vw)
+    // line-height: 1.4em
+    letter-spacing: 0.02em
+    margin: 0
+
+  .lead
+    margin: 0
+    margin-top: calc(50px + 10vw)
+    font-family: 'neue-machina-medium'
+    font-size: calc(0.625em + 2vw)
+    letter-spacing: 0.04em
+    line-height: 1.3em
+
+.content
+  margin-top: calc(50px + 10vw)
+
+  // font-size: calc(0.4em + 2vw)
+  line-height: 1.3em
+  .answer-the-question
+    max-width: 1200px
+    margin: 0 auto
+    margin-bottom: 4.0em
+    .question
+      max-width: 80ch
+    .answer
+      &__who
+        max-width: 80ch
+        margin-left: auto
+      &__text
+        max-width: 80ch
+        margin-left: auto
+
+.letter-for-rotate
+  // transform: rotate(45deg)
+  animation-name: letter-for-rotate
+  animation-duration: 500ms
+  animation-timing-function: .5s cubic-bezier(0.34, 1.56, 0.64, 1)
+  // animation-iteration-count: infinite
+  display: inline-block
+
+@keyframes letter-for-rotate
+  0%
+    transform: rotate(0deg)
+  40%
+    transform: rotate(5deg)
+    // transform: translate3d(1px, 1px, 1px)
+  60%
+    transform: rotate(-5deg)
+    // transform: translate3d(0px, 0px, 0px)
+  100%
+    transform: rotate(0deg)
+
+.part-title
+  font-family: neue-machina-black
+  font-size: 1.4em
+  line-height: 1.2em
