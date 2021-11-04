@@ -12,8 +12,8 @@ export function computeOpacity(maximalTemperature, minimalTemperature, temperatu
   // const coefficient = 100 / (maximalTemperature - minimalTemperature)
   const coefficient = 20 / (maximalTemperature - minimalTemperature)
 
-  if (temperature >= maximalTemperature) return 0
-  if (temperature <= minimalTemperature) return 1
+  if (temperature >= maximalTemperature) return 20
+  if (temperature <= minimalTemperature) return 0
   // Линейная функция
   // else return (100 - temperature * coefficient) / 100
   // Нелинейная функция

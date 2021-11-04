@@ -13,7 +13,7 @@ export async function getTemperature(coordinates) {
   }
 
   // Отправляем координаты на сервер
-  const dataFromServer = await fetch('http://localhost/weather', fetchOptions)
+  const dataFromServer = await fetch('http://localhost:8001/weather', fetchOptions)
   if (dataFromServer.status === 200) {
     return dataFromServer.json()
   } else {
